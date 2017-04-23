@@ -41,15 +41,9 @@ package bounce;
 
         public static void main(String[] args) {
             
-            try 
-             { 
-             UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel"); 
-             } 
+           
             
-            catch(Exception e){ 
-              }
-            
-            //http://stackoverflow.com/questions/9541045/how-to-set-jframe-look-and-feel
+           
             
             new Bounce();
         
@@ -406,8 +400,7 @@ package bounce;
                    (g1.Ylocation >= g1.YlocationB1-10 && g1.Ylocation <= g1.YlocationB1+10))
                
            {
-               LeftCounter++;
-               LeftScore.setText(" "+LeftCounter);
+              
                directionX=-directionX;
            }
            
@@ -433,42 +426,11 @@ package bounce;
                    (g1.Ylocation >= g1.YlocationB4-10 && g1.Ylocation <= g1.YlocationB4+10))
                
            {
-               RightCounter++;
-               RightScore.setText(" "+RightCounter);
+              
                directionX=-directionX;
            }
            
-           if (g1.Xlocation<= 10 || g1.Xlocation >=510 )
-           {
-              
-               gameOver=true;
-               
-           }
-           
-               
-           if (gameOver)
-               
-           {
-              
-           
-               if (RightCounter>LeftCounter){
-               
-                t1.stop();
-               JOptionPane.showMessageDialog(null,"Game Over and Player 2 Won");
-               }
-                else 
-                 
-                    t1.stop();
-                  JOptionPane.showMessageDialog(null,"Game Over and Player 1 Won");
-                  
-                 
-               
-                if (RightCounter==LeftCounter)
-                {
-                     t1.stop();
-                    JOptionPane.showMessageDialog(null,"Game Over and Draw");
-                } 
-           }
+         
                
                
           // making the buttons work  
@@ -489,7 +451,7 @@ package bounce;
            
            if (ae.getSource() == multiButton)
            {
-               JOptionPane.showMessageDialog(null,"Test");
+               
            }
            
            if (ae.getSource()== runButton)
@@ -500,18 +462,14 @@ package bounce;
                {
                stepDirection = false;
                t1.start();
-               runButton.setText("Pause") ;
-               ImageIcon icon2 = new ImageIcon("images\\pause.png");
-               runButton.setIcon(icon2);
+               
                }
                
                else
                {
                stepDirection = true;  
                t1.stop();
-               runButton.setText("Run") ;
-               ImageIcon icon2 = new ImageIcon("images\\run.png");
-               runButton.setIcon(icon2);
+              
                 
                }
            }   
